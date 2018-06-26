@@ -20,7 +20,7 @@
 
 ## 使用说明
 
-![GUI](./image/GUI.png)
+![GUI](./image/GUI.PNG)
 
 上图是我设计的GUI界面，下面分块介绍每一部分的作用
 
@@ -169,13 +169,13 @@ public static Dictionary<int, Page> Contents = new Dictionary<int, Page>();
 
 1. 在一些情况下，由于跳转指令的频繁出现，一个内存块中的指令执行1~3条后，即跳转到其它页中的指令，使得缺页频率很高；而且一个页在被访问一次（执行其中的几条指令）后，很难再被访问第二次，这就使得LRU算法的性能大大下降（几乎违背了LRU算法的前提假设）。综合以上两点，使用FIFO算法和LRU算法的运行结果完全一致。**这并不是算法实现错误，而是指令序列的随机性问题**。
 
-   ![FIFO-SAME](./image/FIFO-same.png)
+   ![FIFO-SAME](./image/FIFO-same.PNG)
 
-   ![LRU-SAME](./image/LRU-same.png)
+   ![LRU-SAME](./image/LRU-same.PNG)
 
 2. 由于指令序列的随机性，在执行指令时可能会陷入死循环。举例来说，指令A指向指令B，指令B指向指令C，指令C指向指令A。当通过其它途径执行到指令A\B\C中的任一个时，都会导致死循环，此时缺页率格外低，可以通过单步执行指令观察到这一现象。
 
-   ![HLT](./image/HLT.png)
+   ![HLT](./image/HLT.PNG)
 
    请注意蓝色高亮的部分，6、7号指令构成了一个死循环。如此执行320条指令，会使缺页率降到很低的水平。
 
@@ -183,15 +183,15 @@ public static Dictionary<int, Page> Contents = new Dictionary<int, Page>();
 
 1. FIFO
 
-   ![FIFO](./image/FIFO.png)
+   ![FIFO](./image/FIFO.PNG)
 
 2. Rand
 
-   ![Rand](./image/Rand.png)
+   ![Rand](./image/Rand.PNG)
 
 3. LRU
 
-   ![LRU](./image/LRU.png)
+   ![LRU](./image/LRU.PNG)
 
    
 
